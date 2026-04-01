@@ -13,22 +13,16 @@
   "types": "dist/index.d.mts",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
-      }
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
     },
     "./react": {
-      "import": {
-        "types": "./dist/react.d.mts",
-        "default": "./dist/react.mjs"
-      }
+      "types": "./src/react.ts",
+      "import": "./src/react.ts"
     },
     "./solid": {
-      "import": {
-        "types": "./dist/solid.d.mts",
-        "default": "./dist/solid.mjs"
-      }
+      "types": "./src/solid.ts",
+      "import": "./src/solid.ts"
     }
   },
   "files": [
