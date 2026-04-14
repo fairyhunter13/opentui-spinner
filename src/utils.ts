@@ -2,7 +2,7 @@
 // Color Generator Types & Functions
 // ============================================================================
 
-import type { ColorInput } from "@opentui/core";
+import type { ColorInput } from "@fairyhunter13/opentui-core"
 
 /**
  * Function that generates a color for a specific character at a specific frame
@@ -17,7 +17,7 @@ export type ColorGenerator = (
   charIndex: number,
   totalFrames: number,
   totalChars: number,
-) => ColorInput;
+) => ColorInput
 
 /**
  * Creates a pulsing color effect that cycles through colors
@@ -28,10 +28,10 @@ export type ColorGenerator = (
  */
 export function createPulse(colors: ColorInput[], speed = 1.0): ColorGenerator {
   return (frameIndex: number) => {
-    const adjustedFrame = Math.floor(frameIndex * speed);
-    const colorIndex = adjustedFrame % colors.length;
-    return colors[colorIndex];
-  };
+    const adjustedFrame = Math.floor(frameIndex * speed)
+    const colorIndex = adjustedFrame % colors.length
+    return colors[colorIndex]
+  }
 }
 
 /**
@@ -42,14 +42,9 @@ export function createPulse(colors: ColorInput[], speed = 1.0): ColorGenerator {
  * ```
  */
 export function createWave(colors: ColorInput[]): ColorGenerator {
-  return (
-    frameIndex: number,
-    charIndex: number,
-    _totalFrames: number,
-    totalChars: number,
-  ) => {
-    const position = (charIndex + frameIndex) % totalChars;
-    const colorIndex = Math.floor((position / totalChars) * colors.length);
-    return colors[colorIndex] ?? colors[0];
-  };
+  return (frameIndex: number, charIndex: number, _totalFrames: number, totalChars: number) => {
+    const position = (charIndex + frameIndex) % totalChars
+    const colorIndex = Math.floor((position / totalChars) * colors.length)
+    return colors[colorIndex] ?? colors[0]
+  }
 }

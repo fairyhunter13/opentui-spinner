@@ -2,12 +2,7 @@
   "name": "opentui-spinner",
   "version": "0.0.6",
   "description": "A small & opinionated spinner library",
-  "author": "Matt Simpson",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/msmps/opentui-spinner.git"
-  },
   "type": "module",
   "module": "dist/index.mjs",
   "types": "dist/index.d.mts",
@@ -16,12 +11,6 @@
       "import": {
         "types": "./dist/index.d.mts",
         "default": "./dist/index.mjs"
-      }
-    },
-    "./react": {
-      "import": {
-        "types": "./dist/react.d.mts",
-        "default": "./dist/react.mjs"
       }
     },
     "./solid": {
@@ -34,6 +23,11 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "tsdown",
+    "lint": "biome check .",
+    "lint:fix": "biome check . --write"
+  },
   "keywords": [
     "opentui",
     "spinner",
@@ -42,31 +36,24 @@
     "console",
     "tui"
   ],
-  "scripts": {
-    "build": "tsdown",
-    "lint": "biome check .",
-    "lint:fix": "biome check . --write"
+  "dependencies": {
+    "cli-spinners": "^3.3.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.4",
+    "@fairyhunter13/opentui-core": "^0.1.113",
+    "@fairyhunter13/opentui-solid": "^0.1.113",
     "@types/bun": "latest",
     "tsdown": "^0.16.0"
   },
   "peerDependencies": {
-    "@opentui/core": "^0.1.49",
-    "@opentui/react": "^0.1.49",
-    "@opentui/solid": "^0.1.49",
+    "@fairyhunter13/opentui-core": "^0.1.113",
+    "@fairyhunter13/opentui-solid": "^0.1.113",
     "typescript": "^5"
   },
   "peerDependenciesMeta": {
-    "@opentui/react": {
-      "optional": true
-    },
-    "@opentui/solid": {
+    "@fairyhunter13/opentui-solid": {
       "optional": true
     }
-  },
-  "dependencies": {
-    "cli-spinners": "^3.3.0"
   }
 }

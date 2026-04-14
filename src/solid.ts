@@ -1,12 +1,12 @@
-import { extend } from "@opentui/solid";
-import { SpinnerRenderable } from ".";
+import { extend } from "@fairyhunter13/opentui-solid"
+import { SpinnerRenderable } from "."
 
 // Add TypeScript support
-declare module "@opentui/solid" {
+declare module "@fairyhunter13/opentui-solid" {
   interface OpenTUIComponents {
-    spinner: typeof SpinnerRenderable;
+    spinner: typeof SpinnerRenderable
   }
 }
 
 // Register the component
-extend({ spinner: SpinnerRenderable });
+extend({ spinner: SpinnerRenderable })
